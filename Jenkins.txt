@@ -1,0 +1,46 @@
+sai - Sai@236600
+user - Password
+--------------------------------------
+http://54.210.0.196:8082/
+---------------------------------------
+installation ->
+
+sudo apt-get update
+
+apt install openjdk-11-jre-headless
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+/etc/apt/sources.list.d/jenkins.list'
+
+systemctl status jenkins
+
+--------------------------------------------------------------------
+ip address:8080 -> jenkins admin
+
+to find any home directory?
+whereis packagename
+ex: whereis jenkins
+
+systemctl restart jenkins
+
+------------------------------------------------
+
+Run shell program in jenkins from git
+
+- create new item -> name it
+- select from git -> add ur repository
+- select poll SCM -> H/2 * * * * -> refresing 2mins
+- selct execute shell in bulit -
+	chmod 777 ./my_script.sh
+	./my_script.sh
+- save and bulid now
+
+---------------------------------------------------
